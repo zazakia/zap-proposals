@@ -83,10 +83,20 @@ export default function NewProposal() {
       <div className="max-w-4xl mx-auto p-6">
         {/* Header */}
         <div className="mb-6">
-          <Link href="/dashboard" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 mb-4">
-            <ArrowLeft className="w-4 h-4 mr-1" />
-            Back to Dashboard
-          </Link>
+          <div className="flex items-center justify-between mb-4">
+            <Link href="/dashboard" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900">
+              <ArrowLeft className="w-4 h-4 mr-1" />
+              Back to Dashboard
+            </Link>
+            <a 
+              href="https://www.zapweb.app" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 hover:text-purple-600 transition-colors"
+            >
+              Home
+            </a>
+          </div>
           <h1 className="text-3xl font-bold text-gray-900">Create New Proposal</h1>
           <p className="text-gray-600 mt-2">Build a professional proposal for your client</p>
         </div>

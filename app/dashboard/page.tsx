@@ -55,6 +55,16 @@ export default function Dashboard() {
                 </div>
                 <span className="text-xl font-bold text-gray-900">ZapProposals</span>
               </Link>
+              <nav className="hidden md:flex items-center space-x-6">
+                <a 
+                  href="https://www.zapweb.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-purple-600 transition-colors"
+                >
+                  Home
+                </a>
+              </nav>
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">

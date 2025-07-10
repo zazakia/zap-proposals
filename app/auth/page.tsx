@@ -34,7 +34,18 @@ export default function AuthPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-blue-50 p-4">
-      <Card className="w-full max-w-md">
+      <div className="w-full max-w-md">
+        <div className="text-center mb-4">
+          <a 
+            href="https://www.zapweb.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-sm text-gray-600 hover:text-purple-600 transition-colors"
+          >
+            ← Back to ZapWeb.App
+          </a>
+        </div>
+        <Card className="w-full">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold text-gray-900">
             Welcome to ZapWeb.App
@@ -129,7 +140,8 @@ export default function AuthPage() {
             Demo Mode: Any email/password will work
           </p>
         </CardContent>
-      </Card>
+        </Card>
+      </div>
     </div>
   )
 }

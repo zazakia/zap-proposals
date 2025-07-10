@@ -5,7 +5,7 @@ import ProposalTemplate from "./template"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Download, Eye, Clock, CheckCircle } from "lucide-react"
+import { Download, Eye, Clock, CheckCircle, Home } from "lucide-react"
 
 type ProposalStatus = "sent" | "viewed"
 
@@ -108,6 +108,18 @@ export default function ProposalClient({ proposal: initialProposal }: ProposalCl
             </div>
             
             <div className="flex items-center space-x-2">
+              <Button size="sm" variant="outline" asChild>
+                <a 
+                  href="https://www.zapweb.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <Home className="w-4 h-4 mr-2" />
+                  Home
+                </a>
+              </Button>
+              
               <Button size="sm" onClick={handleDownloadPDF} className="pdf-button">
                 <Download className="w-4 h-4 mr-2" />
                 Download PDF
