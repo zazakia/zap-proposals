@@ -39,7 +39,12 @@ export default function ZapWebApp() {
         {/* Header */}
         <header className="border-b bg-white/90 backdrop-blur-sm sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-            <div className="flex items-center space-x-3">
+            <a 
+              href="https://www.zapweb.app" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+            >
               <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
                 <Zap className="w-6 h-6 text-white" />
               </div>
@@ -47,8 +52,11 @@ export default function ZapWebApp() {
                 <span className="text-xl font-bold text-purple-900">ZAPWEB.APP</span>
                 <p className="text-xs text-purple-600 font-medium">ZAP INTO ACTION, BUILD FAST, WIN BIG</p>
               </div>
-            </div>
+            </a>
             <nav className="hidden md:flex items-center space-x-6">
+              <Link href="/dashboard" className="text-gray-600 hover:text-purple-600 transition-colors">
+                Proposals
+              </Link>
               <Link href="#services" className="text-gray-600 hover:text-purple-600 transition-colors">
                 Services
               </Link>
