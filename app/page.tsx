@@ -54,9 +54,14 @@ export default function ZapWebApp() {
               </div>
             </a>
             <nav className="hidden md:flex items-center space-x-6">
-              <Link href="/dashboard" className="text-gray-600 hover:text-purple-600 transition-colors">
-                Proposals
-              </Link>
+              <a 
+                href="https://www.zapweb.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-purple-600 transition-colors"
+              >
+                Home
+              </a>
               <Link href="#services" className="text-gray-600 hover:text-purple-600 transition-colors">
                 Services
               </Link>
