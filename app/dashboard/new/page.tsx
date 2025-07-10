@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { ArrowLeft, Plus, Trash2 } from "lucide-react"
+import { ArrowLeft, Plus, Trash2, Zap } from "lucide-react"
 import Link from "next/link"
 
 interface ServiceItem {
@@ -80,23 +80,48 @@ export default function NewProposal() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto p-6">
-        {/* Header */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-4">
+      {/* Main Header */}
+      <header className="bg-white border-b">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <a 
+                href="https://www.zapweb.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+              >
+                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-xl font-bold text-gray-900">ZapProposals</span>
+              </a>
+              <nav className="hidden md:flex items-center space-x-6">
+                <Link href="/dashboard" className="text-gray-600 hover:text-purple-600 transition-colors">
+                  Dashboard
+                </Link>
+                <a 
+                  href="https://www.zapweb.app" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-600 hover:text-purple-600 transition-colors"
+                >
+                  Home
+                </a>
+              </nav>
+            </div>
+            
             <Link href="/dashboard" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900">
               <ArrowLeft className="w-4 h-4 mr-1" />
               Back to Dashboard
             </Link>
-            <a 
-              href="https://www.zapweb.app" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-gray-600 hover:text-purple-600 transition-colors"
-            >
-              Home
-            </a>
           </div>
+        </div>
+      </header>
+
+      <div className="max-w-4xl mx-auto p-6">
+        {/* Page Header */}
+        <div className="mb-6">
           <h1 className="text-3xl font-bold text-gray-900">Create New Proposal</h1>
           <p className="text-gray-600 mt-2">Build a professional proposal for your client</p>
         </div>

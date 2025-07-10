@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Zap } from "lucide-react"
 
 export default function AuthPage() {
   const [email, setEmail] = useState("")
@@ -35,20 +36,26 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 to-blue-50 p-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-4">
+        <div className="text-center mb-6">
           <a 
             href="https://www.zapweb.app" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-sm text-gray-600 hover:text-purple-600 transition-colors"
+            className="inline-flex items-center space-x-2 hover:opacity-80 transition-opacity"
           >
-            ← Back to ZapWeb.App
+            <div className="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
+              <Zap className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <span className="text-xl font-bold text-purple-900">ZapProposals</span>
+              <p className="text-xs text-purple-600 font-medium">ZAP INTO ACTION, BUILD FAST, WIN BIG</p>
+            </div>
           </a>
         </div>
         <Card className="w-full">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-bold text-gray-900">
-            Welcome to ZapWeb.App
+            Welcome Back
           </CardTitle>
           <p className="text-gray-600">Sign in to access your proposals</p>
         </CardHeader>

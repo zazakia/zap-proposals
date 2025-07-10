@@ -5,7 +5,8 @@ import ProposalTemplate from "./template"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Download, Eye, Clock, CheckCircle, Home } from "lucide-react"
+import { Download, Eye, Clock, CheckCircle, Home, Zap, User } from "lucide-react"
+import Link from "next/link"
 
 type ProposalStatus = "sent" | "viewed"
 
@@ -90,36 +91,38 @@ export default function ProposalClient({ proposal: initialProposal }: ProposalCl
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header with actions */}
-      <div className="bg-white border-b sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-4 py-4">
+      {/* Main Header */}
+      <header className="bg-white border-b sticky top-0 z-10">
+        <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">{proposal.title}</h1>
-                <p className="text-gray-600">{proposal.client_company}</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                {getStatusIcon(proposal.status)}
-                <Badge className={getStatusColor(proposal.status)}>
-                  {proposal.status.charAt(0).toUpperCase() + proposal.status.slice(1)}
-                </Badge>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-2">
-              <Button size="sm" variant="outline" asChild>
+              <a 
+                href="https://www.zapweb.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+              >
+                <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-xl font-bold text-gray-900">ZapProposals</span>
+              </a>
+              <nav className="hidden md:flex items-center space-x-6">
+                <Link href="/dashboard" className="text-gray-600 hover:text-purple-600 transition-colors">
+                  Dashboard
+                </Link>
                 <a 
                   href="https://www.zapweb.app" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center"
+                  className="text-gray-600 hover:text-purple-600 transition-colors"
                 >
-                  <Home className="w-4 h-4 mr-2" />
                   Home
                 </a>
-              </Button>
-              
+              </nav>
+            </div>
+            
+            <div className="flex items-center space-x-2">
               <Button size="sm" onClick={handleDownloadPDF} className="pdf-button">
                 <Download className="w-4 h-4 mr-2" />
                 Download PDF
@@ -135,6 +138,26 @@ export default function ProposalClient({ proposal: initialProposal }: ProposalCl
                   {accepting ? "Accepting..." : "Accept Proposal"}
                 </Button>
               )}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Proposal Info Header */}
+      <div className="bg-white border-b">
+        <div className="max-w-6xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">{proposal.title}</h1>
+                <p className="text-gray-600">{proposal.client_company}</p>
+              </div>
+              <div className="flex items-center space-x-2">
+                {getStatusIcon(proposal.status)}
+                <Badge className={getStatusColor(proposal.status)}>
+                  {proposal.status.charAt(0).toUpperCase() + proposal.status.slice(1)}
+                </Badge>
+              </div>
             </div>
           </div>
         </div>
